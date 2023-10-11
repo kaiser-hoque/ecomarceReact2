@@ -1,37 +1,46 @@
-import { React, useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import { useCart } from "react-use-cart";
 
 function Checkout() {
-  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
-
   const { isEmpty, cartTotal, items, updateItemQuantity, removeItem } =
     useCart();
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
   const applyCoupon = () => {
     if (couponCode === "wdpf54") {
       const couponDiscount = cartTotal * 0.1; // 10% discount
       setDiscount(couponDiscount);
+      setIsCouponApplied(true);
     } else {
       setDiscount(0); // Reset discount if the coupon code is invalid
+      setIsCouponApplied(false);
     }
-  };
-
-  //checkout Button Style
-  const checkoutButtonStyle = {
-    backgroundColor: "orange",
-    color: "white",
-    border: "none",
-    padding: "10px 20px",
-    cursor: "pointer",
   };
 
   const discountedTotal = cartTotal - discount;
 
-  if (isEmpty);
+  const updateQuantity = (itemId, newQuantity) => {
+    updateItemQuantity(itemId, newQuantity);
+  };
+
+  const removeCartItem = (itemId) => {
+    removeItem(itemId);
+  };
+
+  const checkoutButtonStyle = {
+    backgroundColor: "#1175A8",
+    color: "white",
+    border: "none",
+    padding: "10px 20px",
+    cursor: "pointer",
+    marginTop: "5px",
+  };
+
   return (
     <div>
       <Header />
@@ -47,7 +56,6 @@ function Checkout() {
           </div>
         </div>
       </div>
-      {/* <!-- End Hero Section --> */}
 
       <div className="untree_co-section">
         <div className="container">
@@ -323,7 +331,7 @@ function Checkout() {
                             <td>
                               {item.nname} <strong className="mx-2">x</strong> 1
                             </td>
-                            <td>{"$" + item.price}</td>
+                            <td>{"$" + item.itemTotal.toFixed(2)}</td>
                           </tr>
                         ))}
                         {/* <tr>
@@ -366,6 +374,12 @@ function Checkout() {
                       >
                         Place Order
                       </button>
+                      <button
+                        style={checkoutButtonStyle}
+                        onClick={() => (window.location.href = "./cart")}
+                      >
+                        View Cart
+                      </button>
                     </div>
 
                     {isOrderPlaced && (
@@ -379,6 +393,7 @@ function Checkout() {
           {/* </form> */}
         </div>
       </div>
+
       <Footer />
     </div>
   );

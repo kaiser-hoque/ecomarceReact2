@@ -1,0 +1,60 @@
+.container7{
+    width: 70%;
+    margin-left:300px;
+}
+
+ 
+
+ 
+td a .edit{
+    margin-left: 10px !important;
+    background-color: rgb(18, 81, 153);
+    width: 35px;
+    border-radius: 5px;
+    color: azure;
+    padding: 5px 10px;
+}
+td a .delete{
+    margin-left: 10px !important;
+    background-color: rgb(226, 86, 86);
+    width: 35px;
+    border-radius: 5px;
+    color: azure;
+    padding: 5px 10px;
+}
+
+
+/* Add this CSS to your existing product.css or a new CSS file */
+
+/* Styling for the confirmation dialog */
+.confirm-dialog {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Styling for the confirmation buttons */
+.confirm-dialog-buttons {
+    margin-top: 10px;
+}
+
+.confirm-dialog-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.confirm-dialog-buttons .confirm-button {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.confirm-dialog-buttons .cancel-button {
+    background-color: #5bc0de;
+    color: #fff;
+}

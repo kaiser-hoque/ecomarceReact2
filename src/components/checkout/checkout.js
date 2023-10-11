@@ -4,6 +4,8 @@ import Footer from "../Footer/footer";
 import { useCart } from "react-use-cart";
 
 function Checkout() {
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+
   const { isEmpty, cartTotal, items, updateItemQuantity, removeItem } =
     useCart();
   const [couponCode, setCouponCode] = useState("");
@@ -16,6 +18,15 @@ function Checkout() {
     } else {
       setDiscount(0); // Reset discount if the coupon code is invalid
     }
+  };
+
+  //checkout Button Style
+  const checkoutButtonStyle = {
+    backgroundColor: "orange",
+    color: "white",
+    border: "none",
+    padding: "10px 20px",
+    cursor: "pointer",
   };
 
   const discountedTotal = cartTotal - discount;
@@ -345,12 +356,21 @@ function Checkout() {
 
                     <div className="form-group">
                       <button
-                        className="btn btn-warning text-white btn-lg py-3 btn-block"
-                        onclick="window.location='thankyou.html'"
+                        style={checkoutButtonStyle}
+                        onClick={() => {
+                          if (!isEmpty) {
+                            // Update the state to indicate that the order is placed
+                            setIsOrderPlaced(true);
+                          }
+                        }}
                       >
                         Place Order
                       </button>
                     </div>
+
+                    {isOrderPlaced && (
+                      <div>Your order has been placed successfully!</div>
+                    )}
                   </div>
                 </div>
               </div>

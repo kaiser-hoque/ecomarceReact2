@@ -329,7 +329,8 @@ function Checkout() {
                         {items.map((item) => (
                           <tr>
                             <td>
-                              {item.nname} <strong className="mx-2">x</strong> 1
+                              {item.nname} <strong className="mx-2">x</strong>{" "}
+                              {item.quantity}
                             </td>
                             <td>{"$" + item.itemTotal.toFixed(2)}</td>
                           </tr>

@@ -379,7 +379,7 @@ function Checkout() {
                         style={checkoutButtonStyle}
                         onClick={() => (window.location.href = "./cart")}
                       >
-                        View Cart
+                        Bcak to cart
                       </button>
                     </div>
 

@@ -146,6 +146,7 @@ function Cart() {
                   <button
                     className="btn btn-warning text-white"
                     style={{ backgroundColor: "#e1ad01", color: "white" }}
+                    onClick={() => (window.location.href = "./home")}
                   >
                     Update Cart
                   </button>

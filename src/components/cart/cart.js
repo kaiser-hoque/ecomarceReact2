@@ -161,7 +161,7 @@ function Cart() {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-6 justify-content-end">
                   <label className="text-black h4 fs-2   " htmlFor="coupon">
                     Coupon
                   </label>
@@ -199,7 +199,7 @@ function Cart() {
             </div>
             <div className="col-md-6 pl-5">
               <div className="row justify-content-end">
-                <div className="col-md-7">
+                <div className="col-md-12">
                   <div className="row">
                     <div className="col-md-12 text-right border-bottom mb-5">
                       <h3 className="text-black h4 text-uppercase">
@@ -238,8 +238,8 @@ function Cart() {
                     </div>
                   </div>
 
-                  <div className="row">
-                    <div className="col-md-12">
+                  <div className="row ">
+                    <div className="col-md-5 justify-content-end">
                       <button
                         className="btn btn-black btn-lg py-3 text-white btn-block bg-warning"
                         onClick={() => (window.location.href = "./checkout")}

@@ -12,11 +12,12 @@ form {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    border-radius: 10px;
   }
   
   /* Set a style for all buttons */
   button {
-    background-color: #04AA6D;
+    background-color: #c4ac26;
     color: white;
     padding: 10px 10px !important;
     border-radius: 5px;
@@ -128,4 +129,18 @@ align-items: center;
   margin: 0 !important;
   font-size: 30px;
   letter-spacing: 30px;
+}
+
+.text2{
+  text-align: left!important;
+
+}
+
+.password-success{
+  color:green !important;
+
+}
+.password-error{
+  color:red !important;
+
 }

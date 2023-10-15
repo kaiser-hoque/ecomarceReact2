@@ -27,7 +27,7 @@ function Signin() {
     // sign( inputs );
   };
   return (
-    <div className="login-wrap">
+    <div className="login-wrap" style={{backgroundColor:" "}}>
       <div className="login-container1">
         <div className="container5 mt-5">
           <h1

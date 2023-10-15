@@ -26,7 +26,7 @@ function Dashboard() {
         </a>
       </h1>
       <h1>
-        Hi <b>{userLogged.name}</b>,
+        {/* Hi <b>{userLogged.name}</b>, */}
       </h1>
       <img
         src={`http://localhost/furn/api/${userLogged.image}`}

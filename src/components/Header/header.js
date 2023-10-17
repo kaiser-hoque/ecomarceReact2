@@ -258,7 +258,7 @@ const Header = () => {
               <div className="container">
                 <div className="attr-nav">
                   <ul>
-                    <li
+                    {/* <li
                       style={{
                         border: "3px solid yellow",
                         backgroundColor: "#eedc82",
@@ -285,7 +285,47 @@ const Header = () => {
                           </li>
                         </div>
                       )}
+                    </li> */}
+                    <li className="dropdown" style={{ position: "relative" }}>
+                      <a
+                        href="#"
+                        className="dropdown-toggle icons"
+                        data-toggle="dropdown"
+                      >
+                        User⬇
+                        {/* You can use the appropriate icon class here */}
+                      </a>
+                      <ul
+                        className={`dropdown-menu ${
+                          isSignedIn ? "dropdown-menu-right" : ""
+                        }`}
+                      >
+                        {isSignedIn ? (
+                          <li>
+                            <a
+                              className="btn btn-link"
+                              href="javascript:void(0)"
+                              onClick={signout}
+                            >
+                              Sign out
+                            </a>
+                            <a href="./dashboard">Dashboard</a>
+                          </li>
+                        ) : (
+                          <li>
+                            <ul>
+                              <li>
+                                <a href="./signin">Sign In</a>
+                              </li>
+                              <li>
+                                <a href="./register">Register</a>
+                              </li>
+                            </ul>
+                          </li>
+                        )}
+                      </ul>
                     </li>
+
                     <li>
                       {/* <a href="./signin">New Arrival🔐</a> */}
                       {/* <a href="#" onClick={openModal}>

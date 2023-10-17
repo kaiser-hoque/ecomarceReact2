@@ -19,6 +19,7 @@ function Cart() {
   };
 
   const discountedTotal = cartTotal - discount;
+  const tax = parseFloat((cartTotal * 0.1).toFixed(2));
 
   if (isEmpty);
   return (
@@ -224,6 +225,16 @@ function Cart() {
                     <div className="col-md-6 text-right">
                       <strong className="text-black">
                         {"$" + discount.toFixed(2)}
+                      </strong>
+                    </div>
+                  </div>
+                  <div className="row mb-5">
+                    <div className="col-md-6">
+                      <span className="text-black">Tax</span>
+                    </div>
+                    <div className="col-md-6 text-right">
+                      <strong className="text-black">
+                        {"$" + tax.toFixed(2)}
                       </strong>
                     </div>
                   </div>
